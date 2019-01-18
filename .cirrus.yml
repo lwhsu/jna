@@ -14,4 +14,5 @@ task:
     - pkg upgrade -y
     - pkg install -y autoconf automake apache-ant gmake libtool
   script:
-    - ant -DCC=clang test
+    - ant -DCC=clang test || true
+    - cat ./build/native-freebsd-x86-64/libffi/config.log
